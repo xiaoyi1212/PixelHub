@@ -19,4 +19,14 @@ public class HomeController {
         }
         return "index_nologin.html";
     }
+
+    @RequestMapping("/login")
+    public String onLogin(HttpServletRequest request){
+        return "login.html";
+    }
+
+    @RequestMapping("/register")
+    public String onRegister(HttpServletRequest request){
+        return "register.html";
+    }
 }

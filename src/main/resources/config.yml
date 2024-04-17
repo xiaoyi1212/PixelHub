@@ -1,0 +1,9 @@
+# PixelHub Config #
+
+repository:
+  root: ./repos # 仓库根目录
+  database: ./user.db
+
+server:
+  port: 8080 # web / git 端口
+  ip: localhost # 必填: 用于URL跳转等

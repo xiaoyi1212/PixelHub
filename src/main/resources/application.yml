@@ -1,6 +1,6 @@
 spring:
   application:
     name: PixelHub
+  datasource:
+    driver-class-name: org.sqlite.JDBC
 
-server:
-  port: 8080
