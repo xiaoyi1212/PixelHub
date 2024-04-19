@@ -7,6 +7,8 @@ import com.pixelecraft.pixelhub.util.YamlConfiguration;
 import lombok.Getter;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.UUID;
 
 public class ServerConfig {
     Configuration configuration;
@@ -22,20 +24,30 @@ public class ServerConfig {
     @Getter
     DefaultUser user;
 
+    @Getter
+    DataBaseConfig dataBaseConfig;
+
     private ServerConfig(File file) throws IOException {
         configuration = new YamlConfiguration().load(file);
         this.repository = new Repository();
         this.user = new DefaultUser();
+        this.dataBaseConfig = new DataBaseConfig();
         loadConfig();
     }
 
     private void loadConfig(){
         this.port = configuration.get("server.port",8080);
         this.ip = configuration.getString("server.ip","localhost");
+
         this.repository.repo_root = configuration.get("repository.root","repos");
+
         this.user.email = configuration.get("admin.username","Administrator");
         this.user.email = configuration.get("admin.email","admin@pixel.com");
         this.user.email = configuration.get("admin.password","pixel114514");
+
+        this.dataBaseConfig.url = configuration.get("database.url","jdbc:mysql://localhost3306/useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true");
+        this.dataBaseConfig.username = configuration.get("database.username","root");
+        this.dataBaseConfig.username = configuration.get("database.password","12345678");
     }
 
     public static ServerConfig buildConfig(){
@@ -65,8 +77,16 @@ public class ServerConfig {
         }
     }
 
-    private static class DefaultUser extends HubUser {
+    public static class DataBaseConfig {
+        String username,password,url;
+    }
+
+    public static class DefaultUser extends HubUser {
         String username,email,password;
+
+        public UUID getUuid() {
+            return UUID.nameUUIDFromBytes((getEmail() + getPassword()).getBytes(StandardCharsets.UTF_8));
+        }
 
         @Override
         public String getUsername() {

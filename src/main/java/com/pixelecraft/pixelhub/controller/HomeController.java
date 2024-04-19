@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
+
     @RequestMapping("/")
     public String onIndex(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
         if(cookies != null){
             for(Cookie cookie : cookies){
-                if(cookie.getName().equals("usertoken")){
+                if(cookie.getName().equals("token")){
 
                 }
             }
