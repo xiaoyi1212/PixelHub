@@ -20,12 +20,12 @@ public class HomeController {
         return "index_nologin.html";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/signin")
     public String onLogin(HttpServletRequest request){
         return "login.html";
     }
 
-    @RequestMapping("/register")
+    @RequestMapping("/signup")
     public String onRegister(HttpServletRequest request){
         return "register.html";
     }

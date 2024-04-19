@@ -2,8 +2,13 @@
 
 repository:
   root: ./repos # 仓库根目录
-  database: ./user.db
+  database: ./user.db # 用户数据库路径
 
 server:
   port: 8080 # web / git 端口
   ip: localhost # 必填: 用于URL跳转等
+
+admin: #管理员账户 (不建议用此账户递交代码)
+  username: Administrator
+  email: admin@pixel.com
+  password: pixel114514

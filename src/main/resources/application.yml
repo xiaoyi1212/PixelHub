@@ -2,5 +2,10 @@ spring:
   application:
     name: PixelHub
   datasource:
-    driver-class-name: org.sqlite.JDBC
-
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://localhost3306/useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true"
+    username: root
+    password: FunWorld
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.pixelecraft.pixelhub.entity
