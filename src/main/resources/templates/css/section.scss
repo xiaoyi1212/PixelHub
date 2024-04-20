@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+.slice {
+    position: relative;
+}
+
+.pd-7,
+.py-7 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+}
+
+section {
+    display: block;
+    background-color: #FFF;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #718096;
+    text-align: left;
+    background-color: #FFF;
+}
+
+div {
+    display: block;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}

@@ -1,0 +1,201 @@
+
+
+.subject-left {
+    animation-name: appearl;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+.subject-right {
+    animation-name: appearr;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+
+
+.fadeIn {
+    animation-name: fadeina;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+.fadeOut {
+    animation-name: fadeout;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+.sizeBig {
+    animation-name: sizebig;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+.card-left {
+    animation-name: cardleft;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+.card-right {
+    animation-name: cardright;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+}
+
+@keyframes cardright {
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes cardleft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes sizebig {
+    0% {
+        opacity: 0;
+        transition: scale(0);
+    }
+
+    55% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes fadeina {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes appearl {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes appearr {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
