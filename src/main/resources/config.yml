@@ -1,9 +1,8 @@
 # PixelHub Config #
 
-database:
+database: # 数据库名默认为datas 使用user表
   username: root # 用户名
   password: FunWorld # 密码
-  name: data # 数据库名
 
 repository:
   root: ./repos # 仓库根目录

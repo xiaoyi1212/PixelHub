@@ -1,6 +1,6 @@
 package com.pixelecraft.pixelhub;
 
-import com.pixelecraft.pixelhub.entity.HubUser;
+import com.pixelecraft.pixelhub.entity.DaoUser;
 import com.pixelecraft.pixelhub.util.Configuration;
 import com.pixelecraft.pixelhub.util.Util;
 import com.pixelecraft.pixelhub.util.YamlConfiguration;
@@ -41,13 +41,13 @@ public class ServerConfig {
 
         this.repository.repo_root = configuration.get("repository.root","repos");
 
-        this.user.email = configuration.get("admin.username","Administrator");
+        this.user.username = configuration.get("admin.username","Administrator");
         this.user.email = configuration.get("admin.email","admin@pixel.com");
-        this.user.email = configuration.get("admin.password","pixel114514");
+        this.user.password = configuration.get("admin.password","pixel114514");
 
         this.dataBaseConfig.url = configuration.get("database.url","jdbc:mysql://localhost3306/useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true");
         this.dataBaseConfig.username = configuration.get("database.username","root");
-        this.dataBaseConfig.username = configuration.get("database.password","12345678");
+        this.dataBaseConfig.password = configuration.get("database.password","12345678");
     }
 
     public static ServerConfig buildConfig(){
@@ -81,8 +81,13 @@ public class ServerConfig {
         String username,password,url;
     }
 
-    public static class DefaultUser extends HubUser {
+    public static class DefaultUser extends DaoUser {
         String username,email,password;
+
+        @Override
+        public String getImgt() {
+            return Util.convertImageToBase64Str(Util.getResource("/static/images/admin.png"));
+        }
 
         public UUID getUuid() {
             return UUID.nameUUIDFromBytes((getEmail() + getPassword()).getBytes(StandardCharsets.UTF_8));

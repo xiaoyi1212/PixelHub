@@ -2,10 +2,19 @@ spring:
   application:
     name: PixelHub
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: "jdbc:mysql://localhost3306/useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/data?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true"
     username: root
     password: FunWorld
-mybatis:
-  mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: com.pixelecraft.pixelhub.entity
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+logging:
+  pattern:
+    console: "[%d{yyyy-MM-dd hh:mm:ss}] [%thread/%clr(%level)] [%clr(%logger{0}){blue}]: %msg%n"

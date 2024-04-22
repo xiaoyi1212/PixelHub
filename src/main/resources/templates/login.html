@@ -6,76 +6,75 @@
     <title>PixelHub | SignIn</title>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/animate.min.css">
-    <style>
-        .example {
-            background: rgba(255, 255, 255, 0.2);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+    <script>
+        function validateForm() {
+            let email = document.getElementById("email").value.toString().trim();
+            let password = document.getElementById("password").value.toString().trim();
+            if(email === ""){
+                document.getElementById("warn").innerHTML="邮箱不得为空!";
+                return false;
+            }
+            if(password === ""){
+                document.getElementById("warn").innerHTML="密码不得为空!";
+                return false;
+            }
+            return true;
         }
-
-        .dark-shadow {
-            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.688);
-        }
-    </style>
+    </script>
 </head>
-<body class="bg-dark">
+<body>
 
-<header class="py-1" style="background: url('./images/code.jpg') no-repeat center fixed; background-size: auto 100%;">
-    <div class="container px-1 text-white">
+<header class="py-3">
+    <div class="container px-1 ">
         <div class="row gx-5 align-items-center justify-content-center">
-            <div class="my-5 text-center wow animate__animated animate__fadeIn">
+            <div class="my-5 text-center">
                 <br>
                 <br>
-                <div class="container" style="width: 500px">
-                    <div class="card example">
-                        <div class="card-body text-white">
-                            <h1><strong>PixelHub | Git Repo</strong></h1>
-                            <h5>像素仓库 - 远程代码托管平台</h5>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="fw-bold">PixelHub | GitRepo</h1>
+                <h3 class="fw-light">像素仓库 - 远程代码托管平台</h3>
             </div>
         </div>
     </div>
 </header>
 
-<section class="py-5 h-100 bg-dark">
+<section class="py-5 h-100">
     <div class="container h-100">
         <div class="row justify-content-md-center h-100">
-            <div class="card bg-dark dark-shadow" style="width: 400px;">
-                <div class="card-body text-white-50">
-                    <h1 class="text-center">SignIn</h1>
-                    <form method="POST" action="/access/login" class="my-login-validation" novalidate="">
-                        <div class="form-group">
-                            <label for="email">E-Mail Address</label>
-                            <input id="email" type="email" class="text-white-50 form-control bg-dark border-light" name="email" value="" required
-                                   autofocus>
-                            <div class="invalid-feedback">
-                                Email is invalid
+            <div class="col-auto">
+                <div class="card border-0" style="width: 400px;">
+                    <div class="card-body">
+                        <h1 class="fw-light">SignIn | 登录</h1>
+                        <br>
+                        <p id="warn" class="fw-light text-danger"></p>
+                        <form onsubmit="return validateForm()" id="login_form" method="POST" action="/access/login" novalidate="">
+                            <div class="form-group">
+                                <label for="email" class="fw-light">E-Mail | 邮箱</label>
+                                <input id="email" type="email" class="form-control border-dark-subtle" name="email"
+                                       value=""
+                                       required="required"
+                                       autofocus>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                            <label for="password">Password
-                            </label>
-                            <input id="password" type="password" class="text-white-50 form-control bg-dark border-light" name="password" required data-eye>
-                            <div class="invalid-feedback">
-                                Password is required
+                            <hr>
+                            <div class="form-group">
+                                <label for="password" class="fw-light">Password | 密码
+                                </label>
+                                <input id="password" required="required" type="password"
+                                       class="form-control border-dark-subtle"
+                                       name="password"
+                                       data-eye>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="form-group m-0">
-                            <button type="submit" class="btn btn-primary btn-block">
+                            <hr>
+                            <button type="submit" class="btn btn-dark w-100 p-2">
                                 Login
                             </button>
-                        </div>
-                        <div class="mt-4 text-center">
-                            Don't have an account? <a href="/signup">SignUp</a>
-                        </div>
-                    </form>
+                            <div class="mt-4 text-center">
+                                Don't have an account? <a href="/signup">SignUp</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -83,12 +82,13 @@
 <footer class="panel-footer" style="width: 100%; overflow: hidden;">
     <div class="container">
         <hr style="border: 1px  solid #000000;">
-        <p class="text-light text-center">Copyright 2024 by 像素工坊 All rights reserved. 像素云网络 版权所有</p>
+        <p class=" text-center">Copyright 2024 by 像素工坊 All rights reserved. 像素云网络 版权所有</p>
     </div>
 </footer>
 
 <script type="text/javascript" src="./js/bootstrap.js"></script>
 <script type="text/javascript" src="./js/wow.js"></script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
 
 <script type="text/javascript">new WOW().init();</script>
 </body>

@@ -1,9 +1,11 @@
 # PixelHub Config #
 
+database: # 数据库名默认为datas 使用user表
+  username: root # 用户名
+  password: FunWorld # 密码
+
 repository:
   root: ./repos # 仓库根目录
-  database:
-    name: data # 数据库名
 
 server:
   port: 8080 # web / git 端口

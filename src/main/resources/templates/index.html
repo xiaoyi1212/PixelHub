@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelHub</title>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/animate.min.css">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <style>
+        .example {
+            background: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <!--
+    th:text="${msg}"
+     -->
+</head>
+<body>
+<section class="shadow-lg w-5 bg-light-subtle">
+    <div class="container">
+        <nav class="navbar sticky-top navbar-expand-lg">
+            <a href="#" class="navbar-brand">
+                <img src="./images/logo.svg" alt="Pixel" width="25" height="25"
+                     class="d-inline-block align-bottom">
+                <span class="hidden"><b class="fw-light">PixelHub</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Repos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Manager</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse show overflow-hidden" id="toggleMobileMenu" th:utext="${data}">
+
+            </div>
+        </nav>
+    </div>
+</section>
+
+<section class="py-5 h-100 ">
+    <div class="container">
+        <div class="row gx-2 justify-content-center">
+            <div class="col-3">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h3 class="card-text fw-light">Repositories | 仓库</h3>
+                        <hr>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a class="fw-light link-dark text-decoration-none" href="">Example Repo1</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="fw-light link-dark text-decoration-none" href="">Example Repo2</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <a class="card-text h2">Example Repo1</a>
+                        <div class="row mb-5 justify-content-center text-center">
+                        </div>
+                        <div class="row gx-3">
+                            <div class="col-auto">
+                                <img width="50px" height="50px" class="rounded-circle" src="./images/admin.png">
+                            </div>
+                            <div class="col-auto">
+                                <p class="card-text text-center">Contribution</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="card-text fw-light">This is a example repository.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h2 class="card-text">Example Repo2</h2>
+                        <div class="row gx-3">
+                            <div class="col-auto">
+                                <img width="50px" height="50px" class="rounded-circle" src="./images/admin.png">
+                            </div>
+                            <div class="col-auto">
+                                <p class="card-text text-center">Contribution</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="card-text fw-light">This is a example repository.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<footer class="panel-footer" style="width: 100%; overflow: hidden;">
+    <div class="container">
+        <hr style="border: 1px  solid #000000;">
+        <p class=" text-center">Copyright 2024 by 像素工坊 All rights reserved. 像素云网络 版权所有</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="./js/bootstrap.js"></script>
+<script type="text/javascript" src="./js/wow.js"></script>
+
+<script type="text/javascript">new WOW().init();</script>
+</body>
+</html>
